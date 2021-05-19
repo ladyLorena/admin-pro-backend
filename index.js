@@ -9,13 +9,16 @@ const { dbConection } = require('./database/config');
 const app = express();
 
 //configurar CORS
-app.use(cors());
+app.use( cors() );
 
 //lectura y parseo del body
 app.use( express.json() );
 
 // Base de datos
 dbConection();
+
+//Directorio publico
+app.use( express.static('public') );
 
 //hosp
 // user123
